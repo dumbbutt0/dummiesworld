@@ -593,4 +593,9 @@ a { color: inherit; text-decoration: none; }
   .border-line, .top-rule, .bottom-rule, .file-top-bar, .portrait-border, .aside-top, .aside-bot { font-size: 7px; }
   .post-title  { font-size: 30px; }
   .file-head .col-size, .file-head .col-dl, .file-row .col-size, .file-row .col-dl { display: none; }
+  /* stop horizontal overflow on the post page (phones) */
+  .byline { flex-wrap: wrap; gap: 8px; }
+  .byline-right { margin-left: 0; }
+  .eof-rule { overflow: hidden; }
+  .prose table { display: block; overflow-x: auto; }
 }
