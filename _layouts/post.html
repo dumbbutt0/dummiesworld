@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div class="page post">
+<main class="page post" id="main-content">
 
   <!-- breadcrumb -->
   <div class="crumb-bar">
@@ -19,7 +19,7 @@ layout: default
     </span>
   </div>
 
-  <div class="top-rule">═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════</div>
+  <div class="top-rule" aria-hidden="true">═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════</div>
 
   <!-- file viewer header -->
   <section class="file-header">
@@ -57,7 +57,7 @@ layout: default
       </table>
     </div>
 
-    <h1 class="post-title">{{ page.title }}</h1>
+    <h1 class="post-title" id="post-title">{{ page.title }}</h1>
     <p class="post-dek">{{ page.dek }}</p>
 
     <div class="byline">
@@ -67,18 +67,18 @@ layout: default
       <span class="dot">·</span>
       <span>{{ page.date | date: "%Y.%m.%d" }}</span>
       <span class="byline-right">
-        <a class="action-btn" href="javascript:void(0)" onclick="navigator.clipboard.writeText('{{ page.url | absolute_url }}');this.textContent='[ copied ]';">[ copy link ]</a>
+        <button class="action-btn copy-link" type="button" data-copy-url="{{ page.url | absolute_url }}">[ copy link ]</button>
         {% if page.raw %}<a class="action-btn" href="{{ page.raw | relative_url }}">[ raw .md ]</a>{% endif %}
         {% if page.source %}<a class="action-btn" href="{{ page.source }}">[ source ]</a>{% endif %}
       </span>
     </div>
   </section>
 
-  <div class="mid-rule">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
+  <div class="mid-rule" aria-hidden="true">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
 
   <!-- body -->
   <section class="body-grid">
-    <article class="article prose">
+    <article class="article prose" aria-labelledby="post-title">
       {{ content }}
 
       <div class="end-of-file">
@@ -115,7 +115,12 @@ layout: default
     </aside>
   </section>
 
-  <div class="mid-rule">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
+  <nav class="post-nav" aria-label="More articles">
+    {% if page.previous %}<a href="{{ page.previous.url | relative_url }}"><span class="muted">PREVIOUS</span><strong>← {{ page.previous.title }}</strong></a>{% endif %}
+    {% if page.next %}<a href="{{ page.next.url | relative_url }}"><span class="muted">NEXT</span><strong>{{ page.next.title }} →</strong></a>{% endif %}
+  </nav>
+
+  <div class="mid-rule" aria-hidden="true">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
 
   <!-- comments -->
   <section class="comments">
@@ -126,4 +131,16 @@ layout: default
   </section>
 
 {% include footer.html %}
-</div>
+</main>
+
+<script>
+  (function () {
+    var button = document.querySelector('.copy-link');
+    if (!button || !navigator.clipboard) return;
+    button.addEventListener('click', function () {
+      navigator.clipboard.writeText(button.dataset.copyUrl).then(function () {
+        button.textContent = '[ copied ]';
+      });
+    });
+  })();
+</script>
