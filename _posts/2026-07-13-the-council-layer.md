@@ -11,6 +11,10 @@ status_note: "concept paper · single-project case study · v0.1"
 read_time: "17 min"
 words: 3808
 flag: "[NEW]"
+highlights:
+  - "115 completed verdicts in the supplied case-study snapshot."
+  - "63 verdicts blocked integration — 54.8% of completed reviews."
+  - "The evidence shows audit yield in one project, not complete correctness or general superiority."
 tldr:
   - "One agent builds, a second attacks the work, deterministic machinery checks the evidence, and a typed state machine decides what may happen next."
   - "In the case-study log, 63 of 115 completed audit verdicts blocked integration — several caught defects that had survived passing test suites."
@@ -47,6 +51,8 @@ human asks -> agent edits -> tests pass -> agent says done
 This works for small tasks. It breaks down over long projects because the conversation is doing too many jobs at once. It contains the idea, the plan, the authority, the status, the evidence, the review, and the memory of what happened. When the session ends, much of that structure disappears or has to be reconstructed.
 
 The council pattern pulls those jobs out of the conversation and turns them into durable artifacts:
+
+![Council workflow: builder, independent auditor, frozen policy, integration, and an append-only evidence ledger](/assets/council-flow.svg)
 
 ```text
 intent -> bounded request -> exact implementation -> independent audit

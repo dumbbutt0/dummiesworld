@@ -43,7 +43,7 @@ layout: default
       </div>
     </section>
 
-    <div class="banner-grid">
+    <div class="banner-grid" id="about">
       <div class="about">
         <div class="about-prompt"><span class="accent">C:\dummiesworld&gt;</span> cat ./about.txt</div>
         <div class="about-kicker">── // about me ──</div>
@@ -165,6 +165,21 @@ tty     /dev/dummy0</pre>
     <span>[N]ext page &nbsp;·&nbsp; [P]rev page &nbsp;·&nbsp; [S]earch &nbsp;·&nbsp; [T]ag filter &nbsp;·&nbsp; [Q]uit</span>
     <span class="muted">{{ site.posts | size }} / {{ site.posts | size }} files shown</span>
   </div>
+
+  <section class="contact-panel" id="contact" aria-labelledby="contact-heading">
+    <div class="section-command"><span class="accent">C:\dummiesworld&gt;</span> open ./contact.txt</div>
+    <div class="contact-grid">
+      <div>
+        <h2 id="contact-heading">Build something difficult.</h2>
+        <p>If you're working on AI security, agent governance, smart-contract verification, or systems that need stronger evidence, I want to hear about it.</p>
+      </div>
+      <div class="contact-actions">
+        <a href="{{ site.github_url }}">[GITHUB]</a>
+        <a href="{{ '/guestbook/' | relative_url }}">[GUESTBOOK]</a>
+        <a href="{{ '/feed.xml' | relative_url }}">[RSS]</a>
+      </div>
+    </div>
+  </section>
 
   <!-- bottom panels -->
   <section class="bottom" id="guestbook">
