@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Verifier-first security review funnel</title>
+  <desc id="desc">Broad discovery produces thousands of plausible candidates. Independent verification removes invented mechanisms, reachability and severity analysis removes non-actionable findings, and program rules determine the handful worth reporting.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#c89b3c"/>
+    </marker>
+    <style>
+      .bg{fill:#0a0a0a}.band{fill:#15140f;stroke:#2a2a26;stroke-width:2}.hot{stroke:#c89b3c}.label{fill:#c89b3c;font:600 14px 'JetBrains Mono',monospace;letter-spacing:1px}.title{fill:#e8e6e1;font:600 23px 'JetBrains Mono',monospace}.copy{fill:#cfcbc2;font:16px Georgia,serif}.count{fill:#7ec488;font:600 14px 'JetBrains Mono',monospace}.arrow{fill:none;stroke:#c89b3c;stroke-width:3;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="560" rx="10"/>
+  <text class="label" x="40" y="43">VERIFY.LAB :: RECALL FIRST, PRECISION SECOND</text>
+
+  <g transform="translate(55 80)">
+    <path class="band hot" d="M0 0h1090l-90 95H90z"/>
+    <text class="label" x="30" y="31">01 / DISCOVER</text>
+    <text class="title" x="30" y="65">Map broadly; over-generate candidates</text>
+    <text class="count" x="880" y="57">THOUSANDS PLAUSIBLE</text>
+  </g>
+  <path class="arrow" d="M600 180v30"/>
+
+  <g transform="translate(145 215)">
+    <path class="band" d="M0 0h910l-85 90H85z"/>
+    <text class="label" x="30" y="29">02 / VERIFY REALITY</text>
+    <text class="title" x="30" y="62">Re-derive the mechanism from source</text>
+    <text class="copy" x="650" y="60">invented mechanisms exit</text>
+  </g>
+  <path class="arrow" d="M600 310v30"/>
+
+  <g transform="translate(230 345)">
+    <path class="band" d="M0 0h740l-80 82H80z"/>
+    <text class="label" x="28" y="28">03 / REACHABILITY + SEVERITY</text>
+    <text class="title" x="28" y="59">Trace attacker path to impact</text>
+  </g>
+  <path class="arrow" d="M600 430v28"/>
+
+  <g transform="translate(310 465)">
+    <path class="band hot" d="M0 0h580l-65 65H65z"/>
+    <text class="label" x="25" y="25">04 / REPORTABILITY</text>
+    <text class="title" x="25" y="51">Scope · duplicate · program rules</text>
+    <text class="count" x="420" y="25">A HANDFUL</text>
+  </g>
+</svg>

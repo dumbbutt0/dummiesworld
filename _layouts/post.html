@@ -60,6 +60,15 @@ layout: default
     <h1 class="post-title" id="post-title">{{ page.title }}</h1>
     <p class="post-dek">{{ page.dek }}</p>
 
+    {% if page.highlights %}
+    <div class="key-results" aria-labelledby="key-results-heading">
+      <div class="key-results-head" id="key-results-heading">KEY RESULTS :: READ THIS FIRST</div>
+      <ul>
+        {% for result in page.highlights %}<li>{{ result }}</li>{% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
     <div class="byline">
       <span>BY <span class="accent">@{{ site.author | upcase }}</span></span>
       <span class="dot">·</span>
@@ -85,6 +94,16 @@ layout: default
         <pre class="eof-rule">──────────────────────────────────── -- end of file ────────────────────────────────────</pre>
         <div class="eof-meta">
           <span class="accent">OK.</span> &nbsp; <span class="muted">{{ page.content | size | divided_by: 1024 }}k · {{ page.read_time }} read</span>
+        </div>
+      </div>
+
+      <div class="post-cta">
+        <div><span class="accent">C:\dummiesworld&gt;</span> reply --public</div>
+        <p>Building something related, disagree with the argument, or have a sharper example? Leave a note on the wire.</p>
+        <div class="post-cta-actions">
+          <a href="{{ '/guestbook/' | relative_url }}">[SIGN GUESTBOOK]</a>
+          <a href="{{ site.github_url }}">[FIND ME ON GITHUB]</a>
+          <a href="{{ '/feed.xml' | relative_url }}">[FOLLOW VIA RSS]</a>
         </div>
       </div>
     </article>

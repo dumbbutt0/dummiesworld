@@ -9,6 +9,10 @@ status: PUBLISHED
 status_note: "companion to the system in this repo"
 read_time: "16 min"
 flag: "[NEW]"
+highlights:
+  - "Seven system layers extend capability beyond the core model."
+  - "Memory, tools and verification can improve without retraining model weights."
+  - "Horizontal scaling complements stronger models; it does not replace vertical scaling."
 raw: /PAPER.md
 source: https://github.com/dumbbutt0/claude-wiki-public/blob/main/PAPER.md
 tldr:

@@ -9,6 +9,10 @@ status: PUBLISHED
 status_note: "the intro to the Verifier-First AI series"
 read_time: "5 min"
 flag: "[NEW]"
+highlights:
+  - "Roughly 50 AI-assisted audit runs informed the workflow."
+  - "Thousands of plausible candidates narrowed to a handful worth reporting."
+  - "Every candidate must separately clear reality, reachability and severity, then reportability."
 tldr:
   - "Point an AI at a codebase and it hands you a thousand plausible bugs. Maybe five matter. Finding is the easy part."
   - "Discovery is no longer the bottleneck in AI security. Verification is."
@@ -38,6 +42,8 @@ We now have agents that can hunt vulnerabilities autonomously. What we mostly do
 ## Three questions everyone smashes into one
 
 Most AI auditors answer a single question, *"does this look like a bug?"*, and treat the answer as final. In reality a finding has to clear three completely separate gates:
+
+![Verifier-first funnel: broad discovery narrows through reality, reachability and severity, then reportability](/assets/verifier-funnel.svg)
 
 - **Is it real?** Does the mechanism actually exist when you re-derive it from source? A huge share of candidates die right here.
 - **Is it reachable and severe?** A real mechanism isn't a vulnerability yet. An attacker has to be able to *reach* the broken state, and something that matters has to *consume* it.

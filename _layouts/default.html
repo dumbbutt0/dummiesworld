@@ -31,6 +31,18 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="scanlines" aria-hidden="true"></div>
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="site-nav-inner">
+      <a class="site-nav-brand" href="{{ '/' | relative_url }}">DUMMIESWORLD</a>
+      <div class="site-nav-links">
+        <a href="{{ '/#work' | relative_url }}">WORK</a>
+        <a href="{{ '/#posts' | relative_url }}">POSTS</a>
+        <a href="{{ '/#about' | relative_url }}">ABOUT</a>
+        <a href="{{ '/guestbook/' | relative_url }}">GUESTBOOK</a>
+        <a href="{{ '/#contact' | relative_url }}">CONTACT</a>
+      </div>
+    </div>
+  </nav>
   {{ content }}
 </body>
 </html>

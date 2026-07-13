@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">The Council Layer workflow</title>
+  <desc id="desc">A builder produces an exact commit, an independent auditor reviews it, frozen policy evaluates the verdict, eligible work integrates, and every transition is recorded in an append-only evidence ledger. Blocked work returns to the builder.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#c89b3c"/>
+    </marker>
+    <style>
+      .bg{fill:#0a0a0a}.frame{fill:#15140f;stroke:#2a2a26;stroke-width:2}.hot{stroke:#c89b3c}.title{fill:#e8e6e1;font:600 24px 'JetBrains Mono',monospace}.label{fill:#c89b3c;font:600 14px 'JetBrains Mono',monospace;letter-spacing:1px}.copy{fill:#cfcbc2;font:16px Georgia,serif}.small{fill:#7a7a72;font:13px 'JetBrains Mono',monospace}.line{fill:none;stroke:#c89b3c;stroke-width:3;marker-end:url(#arrow)}.ledger{fill:#0c0c0a;stroke:#c89b3c;stroke-width:2}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="520" rx="10"/>
+  <text class="label" x="40" y="44">COUNCIL.SYS :: AUTHORIZED TRANSITION PATH</text>
+
+  <g transform="translate(40 90)">
+    <rect class="frame hot" width="230" height="145" rx="4"/>
+    <text class="label" x="18" y="30">01 / BUILDER</text>
+    <text class="title" x="18" y="68">Implement</text>
+    <text class="copy" x="18" y="98">Bounded request</text>
+    <text class="copy" x="18" y="122">Exact commit + tests</text>
+  </g>
+  <g transform="translate(340 90)">
+    <rect class="frame hot" width="230" height="145" rx="4"/>
+    <text class="label" x="18" y="30">02 / AUDITOR</text>
+    <text class="title" x="18" y="68">Attack</text>
+    <text class="copy" x="18" y="98">Independent claim</text>
+    <text class="copy" x="18" y="122">Structured verdict</text>
+  </g>
+  <g transform="translate(640 90)">
+    <rect class="frame hot" width="230" height="145" rx="4"/>
+    <text class="label" x="18" y="30">03 / POLICY</text>
+    <text class="title" x="18" y="68">Decide</text>
+    <text class="copy" x="18" y="98">Frozen authority</text>
+    <text class="copy" x="18" y="122">GO / BLOCKED</text>
+  </g>
+  <g transform="translate(940 90)">
+    <rect class="frame hot" width="220" height="145" rx="4"/>
+    <text class="label" x="18" y="30">04 / INTEGRATE</text>
+    <text class="title" x="18" y="68">Advance</text>
+    <text class="copy" x="18" y="98">Clean audited tree</text>
+    <text class="copy" x="18" y="122">Next eligible task</text>
+  </g>
+
+  <path class="line" d="M270 162h65"/>
+  <path class="line" d="M570 162h65"/>
+  <path class="line" d="M870 162h65"/>
+  <path class="line" d="M755 240v52H155v-52"/>
+  <text class="small" x="397" y="282">BLOCKED → bounded repair, same lineage</text>
+
+  <g transform="translate(40 350)">
+    <rect class="ledger" width="1120" height="115" rx="4"/>
+    <text class="label" x="20" y="31">APPEND-ONLY EVIDENCE LEDGER</text>
+    <text class="copy" x="20" y="64">request · repository · commit · policy · tests · claim · verdict · integration</text>
+    <text class="small" x="20" y="91">Every important transition remains reconstructable. Language alone cannot authorize state.</text>
+  </g>
+  <path d="M155 235v110M455 235v110M755 235v110M1050 235v110" stroke="#6b5224" stroke-width="2" stroke-dasharray="6 7"/>
+</svg>
