@@ -18,6 +18,7 @@ tldr:
   - "Language does not authorize state changes: a transition is trusted only when the system can reconstruct why it was allowed."
   - "Only Class D — publish, spend, destroy, mission, constitution — returns to the owner. Everything else reduces to evidence, policy, audit, or council judgment."
 links:
+  - { label: "forkable gist (full paper, CC BY 4.0)", url: "https://gist.github.com/dumbbutt0/79db7ccfe8571ddaeaa1bd15c891026b" }
   - { label: "LLM Wiki (Karpathy)", url: "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f" }
 ---
 
@@ -544,4 +545,4 @@ The quantitative observations in this paper were derived from the user-supplied 
 
 ---
 
-*Version note: v0.1 is the first public edition of this paper. Corrections and future revisions will be noted here.*
+*Version note: v0.1 is the first public edition of this paper. Corrections and future revisions will be noted here. The complete paper is also available as a [forkable public Gist](https://gist.github.com/dumbbutt0/79db7ccfe8571ddaeaa1bd15c891026b) under CC BY 4.0.*
