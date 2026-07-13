@@ -4,11 +4,36 @@ description: "notes from an independent security researcher — smart-contract a
 url: "https://dumbbutt.tech"
 baseurl: ""
 author: dumbbutt0
-repo_url: "https://github.com/dumbbutt0/claude-wiki-public"
+repo_url: "https://github.com/dumbbutt0/dummiesworld"
+github_url: "https://github.com/dumbbutt0"
+
+featured_work:
+  - name: "Agent Coliseum"
+    filename: "COUNCIL.SYS"
+    status: "ACTIVE"
+    summary: "A persistent builder–auditor council with policy-bound integration and reconstructable decisions."
+    proof: "Case-study snapshot: 116 audit requests · 115 verdicts · 63 blocked integrations"
+    url: "/posts/the-council-layer/"
+    source: "https://gist.github.com/dumbbutt0/79db7ccfe8571ddaeaa1bd15c891026b"
+  - name: "Claude Wiki"
+    filename: "WIKI.OS"
+    status: "PUBLIC"
+    summary: "A privacy-scoped knowledge system with graph retrieval, persistent memory, and autonomous maintenance."
+    proof: "Runnable public system layer · local/private knowledge remains excluded"
+    url: "https://github.com/dumbbutt0/claude-wiki-public"
+    source: "https://github.com/dumbbutt0/claude-wiki-public"
+  - name: "Verifier-First AI"
+    filename: "VERIFY.LAB"
+    status: "RESEARCH"
+    summary: "Security-review workflows that separate discovery, reachability, severity, and reportability."
+    proof: "Method notes from roughly 50 AI-assisted audit runs"
+    url: "/posts/verifier-first-ai-security-review/"
+    source: "/posts/verifier-first-ai-security-review/"
 
 permalink: /posts/:title/
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 feed:
   path: feed.xml
 

@@ -1,43 +1,62 @@
 ---
 layout: default
 ---
-<div class="page">
+<main class="page" id="main-content">
 
-  <div class="border-line">═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════</div>
+  <div class="border-line" aria-hidden="true">═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════</div>
 
   <!-- banner / about -->
   <header class="banner">
-    <pre class="mega-ascii">▓█████▄  █    ██  ███▄ ▄███▓ ███▄ ▄███▓ ██▓▓█████   ██████       █     █░  ▒█████   ██▀███   ██▓      ▓█████▄
+    <pre class="mega-ascii" role="img" aria-label="dummiesworld">▓█████▄  █    ██  ███▄ ▄███▓ ███▄ ▄███▓ ██▓▓█████   ██████       █     █░  ▒█████   ██▀███   ██▓      ▓█████▄
 ▒██▀ ██▌ ██  ▓██▒▓██▒▀█▀ ██▒▓██▒▀█▀ ██▒▓██▒▓█   ▀ ▒██    ▒      ▓█░ █ ░█░ ▒██▒  ██▒▓██ ▒ ██▒▓██▒      ▒██▀ ██▌
 ░██   █▌▓██  ▒██░▓██ ▒▒ ▓██░▓██ ▒▒ ▓██░▒██▒▒███   ░ ▓██▄        ▒█░ █ ░█  ▒██░  ██▒▓██ ░▄█ ▒▒██░      ░██   █▌
 ░▓█▄   ▌▓▓█  ░██░▒██    ▒██ ▒██    ▒██ ░██░▒▓█  ▄   ▒   ██▒     ░█░ █ ░█  ▒██   ██░▒██▀▀█▄  ▒██░      ░▓█▄  ▄▌
 ░▒█████▓ ▒▒█████▓ ▒██▒   ░██▒▒██▒   ░██▒░██░░▒████▒▒██████▒▒     ░░██▒██▓  ░ ████▓▒░░██▓ ▒██▒░████████▒░▒█████▓
  ▒▒▓▒▒▒ ░▒▓▒ ▒ ▒ ░ ▒░   ░  ░░ ▒░   ░  ░░▓  ░░ ▒░ ░▒ ▒▓▒ ▒ ░     ░ ▓░▒ ▒   ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░░▒▒▒▒▒▒░  ▒▒▓▒▒▒</pre>
+    <div class="mobile-wordmark" aria-hidden="true">DUMMIES<br />WORLD</div>
 
     <p class="tagline">
       <span class="accent">«</span> {{ site.tagline }} <span class="accent">»</span>
     </p>
 
+    <div class="hero-intro">
+      <p>I build auditable AI systems, agent-governance infrastructure, and security tooling on constrained compute.</p>
+      <nav class="quick-links" aria-label="Primary">
+        <a href="#work">[VIEW WORK]</a>
+        <a href="#posts">[READ NOTES]</a>
+        <a href="{{ site.github_url }}">[GITHUB]</a>
+        <a href="{{ '/feed.xml' | relative_url }}">[RSS]</a>
+      </nav>
+    </div>
+
+    <section class="featured" id="work" aria-labelledby="work-heading">
+      <div class="section-command"><span class="accent">C:\dummiesworld&gt;</span> dir ./work</div>
+      <h1 id="work-heading">Selected work</h1>
+      <div class="project-grid">
+        {% for project in site.featured_work %}
+        <article class="project-card">
+          <div class="project-topline"><span class="fname">{{ project.filename }}</span><span class="project-status">{{ project.status }}</span></div>
+          <h2>{{ project.name }}</h2>
+          <p>{{ project.summary }}</p>
+          <div class="project-proof">PROOF :: {{ project.proof }}</div>
+          <div class="project-actions"><a href="{{ project.url }}">[CASE STUDY]</a><a href="{{ project.source }}">[SOURCE]</a></div>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
     <div class="banner-grid">
       <div class="about">
         <div class="about-prompt"><span class="accent">C:\dummiesworld&gt;</span> cat ./about.txt</div>
-        <div class="about-kicker">── // about me ───────────────────────────────────────────────────────</div>
+        <div class="about-kicker">── // about me ──</div>
         <p class="about-para">
           <span class="dropcap">I</span>'m an independent security researcher focused on smart-contract
-          auditing, exploit analysis, and adversarial AI workflows. My work centers on finding real paths to
-          improve consumer AI systems — building benchmarks and workflows that dramatically raise the accuracy
-          of frontier models in niche fields and precision-based tasks.
+          auditing, exploit analysis, and adversarial AI workflows. I build systems that make model output more
+          useful through verification, persistent memory, evidence, and bounded autonomy.
         </p>
         <p class="about-para">
-          I'm especially interested in <span class="hi">agentic security</span>,
-          <span class="hi">quantization</span>, <span class="hi">harness-engineering</span>,
-          <span class="hi">low-level protocol logic</span>, <span class="hi">evaluation design</span>, and
-          <span class="hi">model improvements on limited compute</span>. I also build tooling around bug
-          bounties, agent-based workflow reviews, vulnerability-pattern extraction, and triage-grade reporting.
-        </p>
-        <p class="about-para">
-          This blog is the logbook: notes on building AI systems on a budget, the architecture decisions
-          behind them, and what actually works when the model stays the same but the system gets smarter.
+          This is the public logbook: implementation notes, case studies, failures, and architecture decisions
+          from building security and AI systems on a budget.
         </p>
         <div class="about-tags">
           <span class="tag-label">tags:</span>
@@ -46,7 +65,6 @@ layout: default
           <span class="about-tag">#exploit-analysis</span>
           <span class="about-tag">#adversarial-ai</span>
           <span class="about-tag">#agentic-security</span>
-          <span class="about-tag">#quantization</span>
           <span class="about-tag">#harness-engineering</span>
           <span class="about-tag">#benchmarks</span>
           <span class="about-tag">#frontier-models</span>
@@ -57,7 +75,7 @@ layout: default
       <div class="portrait-wrap">
         <pre class="portrait-border">┌─[ SYSOP.JPG ]─────────────┐</pre>
         <div class="portrait-frame">
-          <img src="{{ '/assets/sysop.png' | relative_url }}" alt="sysop" class="portrait-img" />
+          <img src="{{ '/assets/sysop.png' | relative_url }}" alt="Portrait of dumbbutt0, the site author" class="portrait-img" width="400" height="400" />
         </div>
         <pre class="portrait-border">└─ 400×400 · 384k · YV12 ───┘</pre>
         <div class="portrait-caption">
@@ -68,19 +86,19 @@ layout: default
     </div>
   </header>
 
-  <div class="border-line">═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════</div>
+  <div class="border-line" aria-hidden="true">═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════</div>
 
   <!-- sysop block -->
   <section class="sysop">
     <div class="sysop-left">
       <div class="sysop-card">
         <div class="sysop-card-head">░░ SYSOP ONLINE ░░</div>
-        <pre class="sysop-card-body">@dumbbutt0 · v0.1.0
-uptime  001d 04:12
-load    0.42  0.51
+        <pre class="sysop-card-body">@dumbbutt0
+status  building in public
 posts   {{ site.posts | size }}
+source  open
 tty     /dev/dummy0</pre>
-        <div class="sysop-card-foot">PRESS ANY KEY...</div>
+        <div class="sysop-card-foot">PUBLIC LOG ONLINE</div>
       </div>
     </div>
 
@@ -90,9 +108,9 @@ tty     /dev/dummy0</pre>
           <tr><td class="k">HANDLE</td><td>dumbbutt0</td></tr>
           <tr><td class="k">LOC.</td><td>somewhere with terrible wifi</td></tr>
           <tr><td class="k">BEAT</td><td>building AI systems on a budget · knowledge graphs · agents</td></tr>
-          <tr><td class="k">STATUS</td><td><span class="online">● ONLINE</span> &nbsp;<span class="muted">(idle 04:11)</span></td></tr>
-          <tr><td class="k">VISITORS</td><td>00000,042</td></tr>
-          <tr><td class="k">BANNER</td><td>
+          <tr><td class="k">STATUS</td><td><span class="online">● BUILDING IN PUBLIC</span></td></tr>
+          <tr><td class="k">UPDATED</td><td>{{ site.time | date: "%Y.%m.%d" }}</td></tr>
+          <tr><td class="k">LINKS</td><td>
             <a href="{{ '/' | relative_url }}" class="link">[ENTER]</a> &nbsp;
             <a href="{{ '/guestbook/' | relative_url }}" class="link">[GUESTBOOK]</a> &nbsp;
             <a href="{{ '/feed.xml' | relative_url }}" class="link">[RSS]</a> &nbsp;
@@ -108,16 +126,16 @@ tty     /dev/dummy0</pre>
   </section>
 
   <!-- file area -->
-  <div class="area-bar">
+  <div class="area-bar" id="posts">
     <span>[F]ILE AREA :: {{ site.posts | size }} / POSTS</span>
-    <span class="muted">PRESS ENTER TO READ A FILE</span>
+    <span class="muted">SELECT A FILE TO READ</span>
   </div>
 
   <div class="file-head">
     <span class="col-num">NUM.</span>
     <span class="col-date">DATE</span>
     <span class="col-size">SIZE</span>
-    <span class="col-dl">D/L</span>
+    <span class="col-dl">TYPE</span>
     <span class="col-name">FILENAME &nbsp; DESCRIPTION</span>
   </div>
 
@@ -126,7 +144,7 @@ tty     /dev/dummy0</pre>
     <span class="col-num muted">[{{ forloop.index | prepend: '000' | slice: -3, 3 }}]</span>
     <span class="col-date muted">{{ post.date | date: "%Y.%m.%d" }}</span>
     <span class="col-size muted">{{ post.content | size | divided_by: 1024 | append: 'K' }}</span>
-    <span class="col-dl accent">★★★★★</span>
+    <span class="col-dl accent">ARTICLE</span>
     <span class="col-name">
       <span class="fname">{{ post.filename | default: post.title | upcase }}</span>
       <span class="muted"> &nbsp;— </span>
@@ -137,7 +155,7 @@ tty     /dev/dummy0</pre>
   {% endfor %}
 
   <div class="area-bar">
-    <span>[N]ext page &nbsp;·&nbsp; [P]rev page &nbsp;·&nbsp; [S]earch &nbsp;·&nbsp; [T]ag filter &nbsp;·&nbsp; [Q]uit</span>
+    <span><a class="link" href="{{ '/' | relative_url }}">[HOME]</a> &nbsp;·&nbsp; <a class="link" href="{{ '/feed.xml' | relative_url }}">[RSS]</a> &nbsp;·&nbsp; <a class="link" href="{{ site.github_url }}">[GITHUB]</a></span>
     <span class="muted">{{ site.posts | size }} / {{ site.posts | size }} files shown</span>
   </div>
 
@@ -176,10 +194,11 @@ tty     /dev/dummy0</pre>
   </section>
 
 {% include footer.html %}
-</div>
+</main>
 
 <script>
   (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     var img = document.querySelector('.portrait-img');
     if (!img) return;
     var frame = img.closest('.portrait-frame');
