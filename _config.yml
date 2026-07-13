@@ -39,6 +39,9 @@ feed:
 
 # the blog is the site; the system code + wiki pages stay in the repo but out of the build
 exclude:
+  - vendor
+  - Gemfile
+  - Gemfile.lock
   - tools
   - .claude
   - 07_visualizer
