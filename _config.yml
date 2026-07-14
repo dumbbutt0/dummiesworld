@@ -6,6 +6,8 @@ baseurl: ""
 author: dumbbutt0
 repo_url: "https://github.com/dumbbutt0/dummiesworld"
 github_url: "https://github.com/dumbbutt0"
+x_url: "https://x.com/dumbButt0"
+hackenproof_url: "https://hackenproof.com/hackers/dumbbutt1?tab=achievements"
 
 featured_work:
   - name: "Agent Coliseum"
